@@ -1,0 +1,15 @@
+<h1 class="site-header">
+	<a href="{{ .Site.BaseURL }}"><img src="/images/ring_logo.png" alt="ring logo"/></a>
+</h1>
+<nav>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+    {{ end }}
+</nav>
+<nav>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.sub }}
+    <a class="{{if or ($currentPage.IsMenuCurrent "sub" .) ($currentPage.HasMenuCurrent "sub" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Parent }}llll</a>
+    {{ end }}
+</nav>

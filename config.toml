@@ -1,0 +1,77 @@
+baseURL = "https://ring.nlnog.net/"
+languageCode = "en-us"
+title = "NLNOG RING"
+publishDir = "HTML"
+
+theme = "anubis"
+paginate = 10
+
+disqusShortname = ""
+googleAnalytics = ""
+
+[author]
+  name = "NLNOG RING"
+
+[params]
+   author = "NLNOG RING"
+
+[menu]
+
+  [[menu.main]]
+    name = "News"
+    identifier = "news"
+    url = "/news/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "introduction"
+    name = "Introduction"
+    url = "/introduction/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "participants"
+    name = "Participants"
+    url = "/participants/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "security"
+    name = "Security"
+    url = "/security/"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "security"
+    name = "Security"
+    url = "/security/"
+    weight = 4
+  
+  [[menu.main]]
+    identifier = "user-guide"
+    name = "User Guide"
+    url = "/user-guide/"
+    weight = 5
+
+  [[menu.main]]
+    identifier = "toolbox"
+    name = "Toolbox"
+    url = "/toolbox/"
+    weight = 6
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 7
+
+  [[menu.main]]
+    identifier = "patrons"
+    name = "Patrons"
+    url = "/patrons/"
+    weight = 8
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
