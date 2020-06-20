@@ -73,6 +73,43 @@ googleAnalytics = ""
     url = "/patrons/"
     weight = 8
 
+  [[menu.user-guide]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "/user-guide/faq/"
+    weight = 1
+
+  [[menu.toolbox]]
+    identifier = "looking-glass"
+    name = "Looking Glass"
+    url = "/toolbox/looking-glass/"
+    weight = 1
+
+  [[menu.toolbox]]
+    identifier = "restful-api"
+    name = "RESTful API"
+    url = "/toolbox/restful-api/"
+    weight = 2
+
+  [[menu.toolbox]]
+    identifier = "ring-sqa"
+    name = "RING SQA"
+    url = "/toolbox/ring-sqa/"
+    weight = 3
+
+  [[menu.toolbox]]
+    identifier = "health-monitoring"
+    name = "Health Monitoring"
+    url = "/toolbox/health-monitoring/"
+    weight = 4
+
+  [[menu.contact]]
+    identifier = "application-form"
+    name = "Application Form"
+    url = "/contact/application-form/"
+    weight = 1
+
+
 [taxonomies]
 category = "categories"
 tag = "tags"
