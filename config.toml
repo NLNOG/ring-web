@@ -9,13 +9,13 @@ paginate = 10
 disqusShortname = ""
 googleAnalytics = ""
 
-customCSS = ["css/style.css"]
 
 [author]
   name = "NLNOG RING"
 
 [params]
    author = "NLNOG RING"
+   customCSS = ["css/ring.css"]
 
 [menu]
 
