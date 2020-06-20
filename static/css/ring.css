@@ -4,3 +4,30 @@ article header h1 {
     margin-bottom: 0.5em;
     font-weight: 600;
 }
+
+.nav2 {
+    margin-top: 1em;
+    font-size: 0.95em;
+    //background: #fafafa;
+    max-width: 100%;
+    text-align: left;
+}
+
+.nav2 a:first-of-type {
+    margin-left: 0;
+}
+
+.nav2 a {
+    color: #696969;
+    margin-left: 2em;
+}
+
+@media (max-width: 840px) {
+    .nav2 {
+        text-align: center;
+        background: #fafafa;
+    }
+    .nav2 a {
+        margin-left: 5%;
+    }
+}
