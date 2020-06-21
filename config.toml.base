@@ -1,4 +1,4 @@
-baseURL = "https://ring.nlnog.net/"
+#baseURL = "https://<url>/"
 languageCode = "en-us"
 title = "NLNOG RING"
 publishDir = "HTML"
