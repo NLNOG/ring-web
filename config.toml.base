@@ -1,7 +1,7 @@
 #baseURL = "https://<url>/"
 languageCode = "en-us"
 title = "NLNOG RING"
-publishDir = "HTML"
+publishDir = "_generated"
 
 theme = "ring-anubis"
 paginate = 10
