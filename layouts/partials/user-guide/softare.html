@@ -1,0 +1,43 @@
+<p>All servers have been installed with an almost default Ubuntu 18.04 Server edition. In addition to what comes by default the packages listed below have been installed by our configuration management system. For some packages we have created our own version to allow access to certain features which normally can only be used by a superuser. Currently these are: <a href="https://github.com/SnijdersIT/mtr-nlnog">mtr</a>, <a href="https://github.com/SnijdersIT/traceroute-nlnog">traceroute</a> and <a href="https://github.com/SnijdersIT/iputils-ping-nlnog">iputils-ping</a>.</p>
+<p>If you have a request regarding missing software, please <a href="/contact">contact</a> us.</p>
+
+<script
+            src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+    crossorigin="anonymous"></script>
+
+<h2>Currently installed software (per distribution)</h2>
+<script>
+$.ajax({
+    url: '/scripts/software.cgi',
+    dataType: 'json',
+    success: function(response) {
+                    generate_html(response);
+                }
+});
+function generate_html(data) {
+    distribution = 'all'
+    var swlist = data.software[distribution];
+    var table = '<table><tr><td width="60" style="vertical-align:top">' + distribution[0].toUpperCase() + distribution.slice(1) + '</td><td><ul>'
+    for(var sw in swlist) {
+        table = table + '<li>' + swlist[sw] + '</li>'
+    }
+    table = table + '</ul></td></tr></table><hr>'
+    $('#software').append(table);
+
+    for(var distribution in data.software) {
+        if (distribution == 'all') {
+        continue;
+    }
+        var swlist = data.software[distribution];
+        var table = '<table><tr><td width="60" style="vertical-align:top">' + distribution[0].toUpperCase() + distribution.slice(1) + '</td><td><ul>'
+        for(var sw in swlist) {
+        table = table + '<li>' + swlist[sw] + '</li>'
+    }
+    table = table + '</ul></td></tr></table><hr>'
+        $('#software').append(table);
+    }
+}
+</script>
+<div id='software'>
+</div>
