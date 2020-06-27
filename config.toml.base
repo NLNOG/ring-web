@@ -81,7 +81,7 @@ googleAnalytics = ""
 
   [[menu.user-guide]]
     identifier = "software"
-    name = "Availble Software"
+    name = "Available Software"
     url = "/user-guide/software/"
     weight = 2
 
