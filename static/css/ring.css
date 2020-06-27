@@ -5,6 +5,9 @@ article header h1 {
     font-weight: 600;
 }
 
-table, th, td {
+table, th, td, tr {
     border: 0px;
+}
+th {
+    background-color: white;
 }
