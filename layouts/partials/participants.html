@@ -29,13 +29,13 @@ $.ajax({
 });
 function generate_html(data) {
     $('#counters').append(
-            '<li>Organisations: <strong>' + data.counters.orgs + '</strong</i>');
+            '<li>Organisations: <strong>' + data.counters.orgs + '</strong></i>');
     $('#counters').append(
-            '<li>RING nodes: <strong>' + data.counters.nodes + '</strong</i>');
+            '<li>RING nodes: <strong>' + data.counters.nodes + '</strong></i>');
     $('#counters').append(
-            '<li>ASNs: <strong>' + data.counters.asns + '</strong</i>');
+            '<li>ASNs: <strong>' + data.counters.asns + '</strong></i>');
     $('#counters').append(
-            '<li>Countries: <strong>' + data.counters.countries + '</strong</i>');
+            '<li>Countries: <strong>' + data.counters.countries + '</strong></i>');
 
     var participantsrand = shuffle(Object.keys(data.participants));
     for (var i = 0; i < participantsrand.length; i++) {
