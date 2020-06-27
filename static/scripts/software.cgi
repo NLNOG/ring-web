@@ -5,9 +5,13 @@ SWYAML="https://raw.githubusercontent.com/NLNOG/ring-ansible/master/roles/softwa
 
 
 print("Content-Type: text/plain\n\n")
+software = {}
 try:
     software = yaml.safe_load(urllib.urlopen(SWYAML))
 except:
-    software = {'all': 'N/A'}
+    pass
+
+if not 'software' in software.keys():
+    software = {'software':{'all':['N/A']}}
 
 print(simplejson.dumps(software))
