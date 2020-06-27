@@ -6,6 +6,19 @@
     crossorigin="anonymous"></script>
 
 <script>
+function shuffle(array) {
+    var tmp, current, top = array.length;
+
+    if(top) while(--top) {
+            current = Math.floor(Math.random() * (top + 1));
+            tmp = array[current];
+            array[current] = array[top];
+            array[top] = tmp;
+    }
+
+    return array;
+}
+
 var participants = Array();
 $.ajax({
     url: '/scripts/participants.cgi',
@@ -15,24 +28,26 @@ $.ajax({
                 }
 });
 function generate_html(data) {
-$('#counters').append(
-        '<li>Organisations: <strong>' + data.counters.orgs + '</strong</i>');
-$('#counters').append(
-        '<li>RING nodes: <strong>' + data.counters.nodes + '</strong</i>');
-$('#counters').append(
-        '<li>ASNs: <strong>' + data.counters.asns + '</strong</i>');
-$('#counters').append(
-        '<li>Countries: <strong>' + data.counters.countries + '</strong</i>');
+    $('#counters').append(
+            '<li>Organisations: <strong>' + data.counters.orgs + '</strong</i>');
+    $('#counters').append(
+            '<li>RING nodes: <strong>' + data.counters.nodes + '</strong</i>');
+    $('#counters').append(
+            '<li>ASNs: <strong>' + data.counters.asns + '</strong</i>');
+    $('#counters').append(
+            '<li>Countries: <strong>' + data.counters.countries + '</strong</i>');
 
-for (const [ p, participant ] of Object.entries(data.participants)) {
+    var participantsrand = shuffle(Object.keys(data.participants));
+    for (var i = 0; i < participantsrand.length; i++) {
+        var participant = data.participants[participantsrand[i]];
         var machines = participant['machines'].join(', ');
         var asnlist = [];
         participant['asns'].forEach(function (asn, a) {
-                asnlist.push('<a href="http://www.ris.ripe.net/dashboard/AS' + asn + '">' + asn + '</a>');
+            asnlist.push('<a href="http://www.ris.ripe.net/dashboard/AS' + asn + '">' + asn + '</a>');
         });
         var asns = asnlist.join(', ');
         $('#participants').append(
-                '<hr><table><tr><td width="300px" style="vertical-align: middle; text-align:center;"><img src="/images/ring-logos/' + participant['logo'] + '" /></td><td style="vertical-align: middle;"><h3>' + participant['name'] + '</h3><ul><li>website: <a title="' + participant['url'] + '" href="' + participant['url'] + '" target="_blank">' + participant['url'] + '</a></li><li>machines: ' + machines + '</li><li>ASNs: ' + asns + '</li><ul></td></tr></table>'
+            '<hr><table><tr><td width="300px" style="vertical-align: middle; text-align:center;"><img src="/images/ring-logos/' + participant['logo'] + '" /></td><td style="vertical-align: middle;"><h3>' + participant['name'] + '</h3><ul><li>website: <a title="' + participant['url'] + '" href="' + participant['url'] + '" target="_blank">' + participant['url'] + '</a></li><li>machines: ' + machines + '</li><li>ASNs: ' + asns + '</li><ul></td></tr></table>'
         );
     }
 }
