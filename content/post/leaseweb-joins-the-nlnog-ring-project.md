@@ -8,7 +8,6 @@ categories = [
 ]
 +++
 
-Leaseweb (AS16265) has made a server available to the NLNOG RING Project. <a href="http://www.leaseweb.net/" target="_blank">Leaseweb</a>, ranking as one of the bigger hosting companies in the Netherlands, is a great addition to the ring.
+Leaseweb (AS16265) has made a server available to the NLNOG RING Project. Leaseweb, ranking as one of the bigger hosting companies in the Netherlands, is a great addition to the ring.
 
-Ring members can connect to "leaseweb01.ring.nlnog.net".
-
+Ring members can connect to leaseweb01.ring.nlnog.net.

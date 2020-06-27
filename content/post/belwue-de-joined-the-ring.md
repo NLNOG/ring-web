@@ -8,7 +8,7 @@ categories = [
 ]
 +++
 
-<a href="http://www.belwue.de">BelWü</a> - AS 553 - joined the RING today. BelWue - Landeshochschulnetz Baden-Wuerttemberg - is the Academic Network of the Federal State of Baden-Wuerttemberg, Germany. 
+<a href="http://www.belwue.de">BelW&#252;</a> - AS 553 - joined the RING today. BelWue - Landeshochschulnetz Baden-Wuerttemberg - is the Academic Network of the Federal State of Baden-Wuerttemberg, Germany. 
 
 Users can connect to belwue01.ring.nlnog.net, which is located in Stuttgart, Germany
 

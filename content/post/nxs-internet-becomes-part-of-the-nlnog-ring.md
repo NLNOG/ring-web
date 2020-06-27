@@ -8,7 +8,6 @@ categories = [
 ]
 +++
 
-<a href="http://www.nxs.nl/" target="_blank">NXS Internet</a> (AS16237) is the latest organisation to join the NLNOG RING Project. A machine has been made available at "nxs01.ring.nlnog.net".
+NXS Internet (AS16237) is the latest organisation to join the NLNOG RING Project. A machine has been made available at nxs01.ring.nlnog.net.
 
-NXS specializes in managed hosting and the public sector thus their participation offers valuable troubleshooting opportunities.
-
+NXS specializes in managed hosting and the public sector thus their participation offers valuable troubleshooting opportunities.
