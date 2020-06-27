@@ -79,6 +79,12 @@ googleAnalytics = ""
     url = "/user-guide/faq/"
     weight = 1
 
+  [[menu.user-guide]]
+    identifier = "software"
+    name = "Availble Software"
+    url = "/user-guide/software/"
+    weight = 2
+
   [[menu.toolbox]]
     identifier = "looking-glass"
     name = "Looking Glass"
