@@ -1,4 +1,4 @@
 +++
-author = "Hugo Authors"
+author = "RING Admins"
 +++
 
