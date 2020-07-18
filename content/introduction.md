@@ -26,7 +26,7 @@ Participation is open to everybody who meets the following requirements:
 
 Admission to the project is discretionary and judged by perceived value for the RING as a whole. If your application is for an additional machine in a covered ASN, please contact us first.
 
-***If you would like to join, please fill out the [application form](/application-form).***
+***If you would like to join, please fill out the [application form](/contact/application-form).***
 
 ## Machine
 

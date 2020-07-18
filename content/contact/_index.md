@@ -5,7 +5,7 @@ layout = "single"
 
 **Become a member:**
 
-Fill in this [application form](https://ring.nlnog.net/contact/application-form/)!
+Fill in this [application form](/contact/application-form/)!
 
 **In general**:
 
