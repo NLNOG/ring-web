@@ -11,3 +11,15 @@ table, th, td, tr {
 th {
     background-color: white;
 }
+
+input, textarea, select {
+    border: 1px solid #eee;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    background: #f7f7f7;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+}
