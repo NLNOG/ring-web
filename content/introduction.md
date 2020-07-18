@@ -39,6 +39,8 @@ The following requirements are mandatory:
 * No packet filtering between your RING node and the internet
 * You are willing to give full sudo access to the Ring-Admins (we will get to the security considerations later in this document)
 
+You may choose to deploy the server directly on physical hardware or as a VM. We do not support (LXC) containers.
+
 The following suggestions are indicative:
 
 * 1 core or CPU
