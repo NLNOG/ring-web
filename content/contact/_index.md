@@ -1,5 +1,6 @@
 +++
 title = "Contact"
+layout = "single"
 +++
 
 **Become a member:**
