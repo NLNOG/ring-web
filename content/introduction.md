@@ -48,7 +48,7 @@ The following suggestions are indicative:
 * At least 1024 megabyte RAM, but more is better
 * 10mbit NIC (more is fine)
 
-(please decide for yourself what is appropiate, the machine will be a mere shell server managed by ansible)
+Please decide for yourself what is appropiate; the machine will be a mere shell server managed by ansible.
 
 ## Management
 
