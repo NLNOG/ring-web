@@ -1,4 +1,24 @@
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+        crossorigin="anonymous"></script>
+
 <form id="application-form">
+
+<script>
+$.ajax({
+    url: '/scripts/countries.cgi',
+    dataType: 'json',
+    success: function(response) {
+                    generate_countries(response);
+                }
+});
+function generate_countries(data) {
+    for (var country in data) {
+        var option = '<option value="' + country["alpha2Code"] + '">' + country["name"] + '</option>'
+        $('#countrycode').append(option);
+    }
+}
+</script>
 
     <h3>Participant information</h3>
     <p>Company name (required)</p>
@@ -23,7 +43,7 @@
     <input type="text" id="ipv6" name="ipv6" required="true" size="40"/>
     <p>IPv4 address</p>
     <input type="text" id="ipv4" name="ipv4" size="40"/>
-    <p>ISO 3166-1 alpha-2 country code (e.g. <i>NL</i> for The Netherlands, required)</p>
+    <p>Country (required)</p>
     <select id="countrycode" name="countrycode" required="true">
     </select>
     <p>ISO 3166-2 state code (e.g. <i>CA</i> for California)</p>
