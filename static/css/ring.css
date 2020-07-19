@@ -23,3 +23,9 @@ input, textarea, select {
     -webkit-font-smoothing: antialiased;
     display: grid;
 }
+
+@media (max-width: 840px) {
+    input, textarea, select {
+        max-width: 250px;
+    }
+}
