@@ -13,8 +13,9 @@ $.ajax({
                 }
 });
 function generate_countries(data) {
-    for (var country in data) {
-        var option = '<option value="' + country["alpha2Code"] + '">' + country["name"] + '</option>'
+    var countries = data.countries;
+    for (var i = 0; i < countries.length; i++) {
+        var option = '<option value="' + countries[i]["alpha2Code"] + '">' + countries[i]["name"] + '</option>'
         $('#countrycode').append(option);
     }
 }
