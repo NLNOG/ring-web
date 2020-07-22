@@ -3,7 +3,7 @@ author = "RING Admins"
 title = "EricNet (US) joined the RING"
 date = "2020-07-22"
 description = "EricNet (US) joined the RING"
-categories [
+categories = [
     "participants",
 ]
 +++
