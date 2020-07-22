@@ -3,7 +3,7 @@ author = "RING Admins"
 title = "Freedom Internet (NL) joined the RING"
 date = "2020-07-22"
 description = "Freedom Internet (NL) joined the RING"
-categories [
+categories = [
     "participants",
 ]
 +++
