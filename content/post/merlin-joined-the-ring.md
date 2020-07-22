@@ -3,7 +3,7 @@ author = "RING Admins"
 title = "MERLIN (CA) joined the RING"
 date = "2020-07-22"
 description = "MERLIN (CA) joined the RING"
-categories [
+categories = [
     "participants",
 ]
 +++
