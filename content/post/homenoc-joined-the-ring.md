@@ -3,7 +3,7 @@ author = "RING Admins"
 title = "Home NOC Operators Group (JP) joined the RING"
 date = "2020-07-22"
 description = "Home NOC Operators Group (JP) joined the RING"
-categories [
+categories = [
     "participants",
 ]
 +++
