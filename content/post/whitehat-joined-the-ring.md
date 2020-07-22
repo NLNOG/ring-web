@@ -1,7 +1,7 @@
 +++
 author = "RING Admins"
 title = "WhiteHat 1 Limited (GB) joined the RING"
-date = "2020-07-22"
+date = "2020-06-16"
 description = "WhiteHat 1 Limited (GB) joined the RING"
 categories = [
     "participants",

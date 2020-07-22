@@ -1,7 +1,7 @@
 +++
 author = "RING Admins"
 title = "Openfactory GmbH (CH) joined the RING"
-date = "2020-07-22"
+date = "2020-07-08"
 description = "Openfactory GmbH (CH) joined the RING"
 categories = [
     "participants",

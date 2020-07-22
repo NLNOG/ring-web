@@ -1,7 +1,7 @@
 +++
 author = "RING Admins"
 title = "OpenBusiness SA (CH) joined the RING"
-date = "2020-07-22"
+date = "2020-07-18"
 description = "OpenBusiness SA (CH) joined the RING"
 categories = [
     "participants",

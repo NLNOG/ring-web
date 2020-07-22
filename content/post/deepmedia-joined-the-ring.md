@@ -1,7 +1,7 @@
 +++
 author = "RING Admins"
 title = "Deep Media (NL) joined the RING"
-date = "2020-07-22"
+date = "2020-06-22"
 description = "Deep Media (NL) joined the RING"
 categories = [
     "participants",

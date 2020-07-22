@@ -1,7 +1,7 @@
 +++
 author = "RING Admins"
 title = "AS207960 Cyfyngedig (GB) joined the RING"
-date = "2020-07-22"
+date = "2020-06-17"
 description = "AS207960 Cyfyngedig (GB) joined the RING"
 categories = [
     "participants",
