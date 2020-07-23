@@ -8,7 +8,8 @@ The RING has been made possible by generous contributions from these fine patron
 
 | | |
 |---|---|
-|[![xs4all](/images/patrons/xs4all.gif)](http://www.xs4all.nl/)|[![amazon](/images/patrons/amazon.png)](http://www.amazon.com/)|[![leaseweb](/images/patrons/leaseweb.png)](http://www.leaseweb.com/)|[![pcextreme](/images/patrons/pcextreme.png)](http://www.pcextreme.nl/)|
+|[![xs4all](/images/patrons/xs4all.gif)](http://www.xs4all.nl/)|[![amazon](/images/patrons/amazon.png)](http://www.amazon.com/)|
+|[![leaseweb](/images/patrons/leaseweb.png)](http://www.leaseweb.com/)|[![pcextreme](/images/patrons/pcextreme.png)](http://www.pcextreme.nl/)|
 
 ---
 ## Timing Server Donation
