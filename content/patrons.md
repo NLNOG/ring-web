@@ -8,9 +8,8 @@ The RING has been made possible by generous contributions from these fine patron
 
 | | | |
 |---|---|---|
-|[![xs4all](/images/patrons/xs4all.gif)](http://www.xs4all.nl/)|[![amazon](/images/patrons/amazon.png)](http://www.amazon.com/)|[![leaseweb](/images/patrons/leaseweb.png)](http://www.leaseweb.com/)|
-|[![hibernia](/images/patrons/hibernia.png)](http://www.hibernianetworks.com/)|[![gossamerthreads](/images/patrons/gossamerthreads.png)](http://www.gossamer-threads.com/)|[![bit](/images/patrons/bit.png)](http://www.bit.nl/)|[![pcextreme](/images/patrons/pcextreme.png)](http://www.pcextreme.nl/)|
-|[![softlayer](/images/patrons/softlayer.png)](http://www.softlayer.com/)|[![dyn](/images/patrons/dyn.png)](http://www.dyn.com/)|
+|[![xs4all](/images/patrons/xs4all.gif)](http://www.xs4all.nl/)|[![amazon](/images/patrons/amazon.png)](http://www.amazon.com/)|
+|[![leaseweb](/images/patrons/leaseweb.png)](http://www.leaseweb.com/)|[![pcextreme](/images/patrons/pcextreme.png)](http://www.pcextreme.nl/)|
 
 ---
 ## Timing Server Donation
@@ -31,7 +30,8 @@ The RING has been made possible by generous contributions from these fine patron
 ---
 ## Former infrastructure providers
 
-[![totaalnet](/images/patrons/totaalnet.png)](http://www.totaalnet.nl/)
+|[![hibernia](/images/patrons/hibernia.png)](http://www.hibernianetworks.com/)|[![gossamerthreads](/images/patrons/gossamerthreads.png)](http://www.gossamer-threads.com/)|[![bit](/images/patrons/bit.png)](http://www.bit.nl/)|
+|[![softlayer](/images/patrons/softlayer.png)](http://www.softlayer.com/)|[![dyn](/images/patrons/dyn.png)](http://www.dyn.com/)|[![totaalnet](/images/patrons/totaalnet.png)](http://www.totaalnet.nl/)|
 
 ---
 ## Early Patrons (2010 – 2012)
