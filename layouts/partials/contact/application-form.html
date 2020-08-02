@@ -2,7 +2,7 @@
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
         crossorigin="anonymous"></script>
 
-<form id="application-form">
+<form id="application-form" action="/scripts/appform-participant.cgi" method="post">
 
 <script>
 $.ajax({
@@ -36,6 +36,8 @@ function generate_countries(data) {
     <input type="text" id="email" name="email" required="true" size="40" maxlength="50"/>
     <p>NOC e-mail address (preferably not 1st line support queue ;-), (required)</p>
     <input type="text" id="nocemail" name="nocemail" required="true" size="40" maxlength="50"/>
+    <p>SSH keys</p>
+    <textarea id="sshkeys" name="sshkeys" cols="60" rows="10" maxlength="2500"></textarea>
 
     <h3>Node information</h3>
     <p>Autonomous System number (required)</p>
@@ -60,7 +62,7 @@ function generate_countries(data) {
 
     <h3>And finally...</h3>
     <p>How did you hear about the RING?</p>
-    <textarea id="hear-about" name="hear-about" cols="60" rows="5" maxlength="500"></textarea>
+    <textarea id="hear_about" name="hear_about" cols="60" rows="5" maxlength="500"></textarea>
     <p>Remarks</p>
     <textarea id="remarks" name="remarks" cols="60" rows="10" maxlength="2500"></textarea>
 
