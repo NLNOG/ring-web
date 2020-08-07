@@ -3,17 +3,18 @@
 import cgi, cgitb
 import getpass
 import html
-import smtplib
+import email, smtplib
+from email import encoders
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import os
 import socket
 from string import Template
 
 # E-mail templates
-ADMINADDR='martin@rodecker.nl'
-APPLICATIONMAIL = '''From: $contact <$email>
-To: NLNOG RING Admins <$adminmail>
-Subject: RING Application from $company - $autnum
-
-General info:
+ADMINADDR='martin+ringtest@rodecker.nl'
+APPLICATIONMAIL = '''General info:
 =============
 
 Company: $company
@@ -34,7 +35,7 @@ $sshkeys
 NODE:
 =====
 
-User: nlnog
+User: $username
 Pass: $password 
 ASN: $autnum
 IPv6: $ipv6
@@ -52,11 +53,7 @@ ring-admin add machine $$username $$hostname $autnum $countrycode $geo "$dc" $ip
 --
 This mail was sent via a contact form on NLNOG RING https://ring.nlnog.net/
 '''
-CONFIRMATIONMAIL = '''From: NLNOG RING Admins <$adminmail>
-To: $contact <$email>
-Subject: RING Application from $company - $autnum
-
-Dear $contact,
+CONFIRMATIONMAIL = '''Dear $contact,
 
 Thank you for your interest in the NLNOG RING. Your application has been received and will be processed shortly.
 
@@ -73,63 +70,61 @@ This mail was sent via a contact form on NLNOG RING https://ring.nlnog.net/
 # Get data
 form = cgi.FieldStorage() 
 
-company = None
+company = ""
 if form.getvalue('company'):
     company = html.escape(form.getvalue('company'),quote=True)
-companydesc = None
+companydesc = ""
 if form.getvalue('companydesc'):
     companydesc = html.escape(form.getvalue('companydesc'),quote=True)
-url = None
+url = ""
 if form.getvalue('url'):
     url = html.escape(form.getvalue('url'),quote=True)
-logo = None
-if form.getvalue('logo'):
-    logo = form.getvalue('logo')
-contact = None
+logo = form['logo']
+contact = ""
 if form.getvalue('contact'):
     contact = html.escape(form.getvalue('contact'),quote=True)
-email = None
+email = ""
 if form.getvalue('email'):
     email = html.escape(form.getvalue('email'),quote=True)
-nocemail = None
+nocemail = ""
 if form.getvalue('nocemail'):
     nocemail = html.escape(form.getvalue('nocemail'),quote=True)
-sshkeys = None
+sshkeys = ""
 if form.getvalue('sshkeys'):
     sshkeys = html.escape(form.getvalue('sshkeys'),quote=True)
 
-autnum = None
+autnum = ""
 if form.getvalue('autnum'):
     autnum = html.escape(form.getvalue('autnum'),quote=True)
-ipv6 = None
+ipv6 = ""
 if form.getvalue('ipv6'):
     ipv6 = html.escape(form.getvalue('ipv6'),quote=True)
-ipv4 = None
+ipv4 = ""
 if form.getvalue('ipv4'):
     ipv4 = html.escape(form.getvalue('ipv4'),quote=True)
-countrycode = None
+countrycode = ""
 if form.getvalue('countrycode'):
     countrycode = html.escape(form.getvalue('countrycode'),quote=True)
-statecode = None
+statecode = ""
 if form.getvalue('statecode'):
     statecode = html.escape(form.getvalue('statecode'),quote=True)
-geo = None
+geo = ""
 if form.getvalue('geo'):
     geo = html.escape(form.getvalue('geo'),quote=True)
-dc = None
+dc = ""
 if form.getvalue('dc'):
     dc = html.escape(form.getvalue('dc'),quote=True)
-username = None
+username = ""
 if form.getvalue('username'):
     username = html.escape(form.getvalue('username'),quote=True)
-password = None
+password = ""
 if form.getvalue('password'):
     password = html.escape(form.getvalue('password'),quote=True)
 
-hear_about = None
+hear_about = ""
 if form.getvalue('hear_about'):
     hear_about = html.escape(form.getvalue('hear_about'),quote=True)
-remarks = None
+remarks = ""
 if form.getvalue('remarks'):
     remarks = html.escape(form.getvalue('remarks'),quote=True)
 
@@ -151,22 +146,41 @@ appformbody = ttext.substitute(company=company,
                                username=username,
                                password=password,
                                hear_about=hear_about,
-                               remarks=remarks,
-                               adminmail=ADMINADDR)
+                               remarks=remarks)
 ttext = Template(CONFIRMATIONMAIL)
-confirmbody = ttext.substitute(company=company,
-                               contact=contact,
-                               email=email,
-                               autnum=autnum,
-                               adminmail=ADMINADDR)
+confirmbody = ttext.substitute(contact=contact)
 
 # Send mails
 sender = getpass.getuser() + '@' + socket.getfqdn()
 server = smtplib.SMTP('localhost')
+
 ## Application mail
-server.sendmail(sender,ADMINADDR,appformbody)
+message = MIMEMultipart()
+message['From'] = "%s <%s>" % (contact,email)
+message['To'] = "NLNOG RING Admins <%s>" % (ADMINADDR)
+message['Subject'] = "RING Application from %s - %s" % (company,autnum)
+message.attach(MIMEText(appformbody, "plain"))
+if logo != None:
+    logo_name = os.path.basename(logo.filename)
+    attachment = MIMEBase("application", "octet-stream")
+    attachment.set_payload(logo.file.read())
+    encoders.encode_base64(attachment)
+    attachment.add_header(
+        "Content-Disposition",
+        "attachment; filename="+logo_name,
+    )
+    message.attach(attachment)
+text = message.as_string()
+server.sendmail(sender,ADMINADDR,text)
+
 ## Confirmation mail
-server.sendmail(sender,email,confirmbody)
+message = MIMEMultipart()
+message['From'] = "NLNOG RING Admins <%s>" % (ADMINADDR)
+message['To'] = "%s <%s>" % (contact,email)
+message['Subject'] = "RING Application from %s - %s" % (company,autnum)
+message.attach(MIMEText(confirmbody, "plain"))
+text = message.as_string()
+server.sendmail(sender,email,text)
 server.quit()
 
 print('Content-type:text/html\r\n\r\n')
