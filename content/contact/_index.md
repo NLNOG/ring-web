@@ -26,8 +26,8 @@ A mailing list is available for participants of the ring, please visit the [mail
 Job Snijders
 * E-mail: [job@instituut.net](mailto:job@instituut.net)
 * Affiliation: NTT Communications
-* PGP Key: [instituut.net/~job/pgp](http://instituut.net/~job/pgp)
-* SSH Key: [instituut.net/~job/job-snijders-public-ssh-key.txt](http://instituut.net/~job/job-snijders-public-ssh-key.txt)
+* PGP Key: [sobornost.net/~job/gpg-key.txt](http://sobornost.net/~job/gpg-key.txt)
+* SSH Key: [sobornost.net/~job/ssh-keys.txt](http://sobornost.net/~job/ssh-keys.txt)
 
 Martin Pels
 
