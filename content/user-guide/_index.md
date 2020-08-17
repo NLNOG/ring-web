@@ -15,7 +15,7 @@ PGP & SSH Keys are available in the [Contact](/contact) section.
 After you have been notified that the server has been added to the ring and is under control of our central configuration management, there are the following tasks you need to perform:
 
 1. Login with your assigned username & the ssh-key you gave us
-2. Add additional ssh keys to the `~/ssh-keys` file on `manage.ring.nlnog.net`. Within 30 to 60 minutes all the authorized_keys files will be updated based on your ssh-keys file. This way you can give co-workers access to the ring.
+2. Add additional ssh keys to the `~/ssh-keys` file on `manage.ring.nlnog.net`. Within two hours all the authorized_keys files will be updated based on your ssh-keys file. This way you can give co-workers access to the ring.
 
 ## Using the ring
 
