@@ -4,7 +4,7 @@ title = "Patrons"
 
 The RING has been made possible by generous contributions from these fine patrons. Patrons provide the RING with capacity, infrastructure and other means to accomplish our goals. If you are interested in becoming a patron too, [contact](/contact) us.
 
-## Current infrastructure providers:
+## Current infrastructure providers
 
 | | |
 |---|---|

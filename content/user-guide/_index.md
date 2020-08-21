@@ -8,7 +8,7 @@ layout = "single"
 
 First fill in the [Application Form](/contact/application-form).
 
-Install Ubuntu in accordance with the requirements. The user that is created by the installation can be called `nlnog`. Please send the FQDN of the machine and the password (pgp encrypted) to one of the ring-admins. The ring-admin will provision the host and setup dns in the ring.nlnog.net zone. When installation is finished the nlnog user will be removed from the machine.
+Install Ubuntu in accordance with the requirements. The user that is created by the installation can be called `nlnog`. Please send the FQDN of the machine and the password (pgp encrypted) to one of the ring-admins. The ring-admin will provision the host and setup dns in the ring.nlnog.net zone. When installation is finished the provisioning user will be removed from the machine.
 
 PGP & SSH Keys are available in the [Contact](/contact) section.
 
