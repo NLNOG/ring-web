@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import random, simplejson, urllib
+import os, random, simplejson, urllib
 
 API="https://api.ring.nlnog.net/1.0/"
 PARTICIPANTS=API + '/participants'
@@ -28,7 +28,11 @@ try:
             pcounters[participant['id']]['url'] = participant['url']
         for node in nodes:
             counters['nodes'] = counters['nodes'] + 1
-            pcounters[participant['id']]['logo'] = node['hostname'].split('.')[0][:-2] + '.png'
+            logo = node['hostname'].split('.')[0][:-2] + '.png'
+            if os.path.isfile('../images/ring-logos/' + logo):
+                pcounters[participant['id']]['logo'] = logo
+            else:
+                pcounters[participant['id']]['logo'] = 'nologo.png'
             _countries[node['countrycode']] = True
             _asns[node['asn']] = True
             _pmachines[node['hostname'].split('.')[0]] = True
