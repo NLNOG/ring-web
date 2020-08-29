@@ -13,7 +13,7 @@ import socket
 from string import Template
 
 # E-mail templates
-ADMINADDR='martin+ringtest@rodecker.nl'
+ADMINADDR='ring-admins@nlnog.net'
 APPLICATIONMAIL = '''General info:
 =============
 
