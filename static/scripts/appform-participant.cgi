@@ -127,69 +127,83 @@ if form.getvalue('hear_about'):
 remarks = ""
 if form.getvalue('remarks'):
     remarks = html.escape(form.getvalue('remarks'),quote=True)
+bits = ""
+if form.getvalue('bits'):
+    bits = html.escape(form.getvalue('bits'),quote=True)
 
-ttext = Template(APPLICATIONMAIL)
-appformbody = ttext.substitute(company=company,
-                               companydesc=companydesc,
-                               url=url,
-                               contact=contact,
-                               email=email,
-                               nocemail=nocemail,
-                               sshkeys=sshkeys,
-                               autnum=autnum,
-                               ipv6=ipv6,
-                               ipv4=ipv4,
-                               countrycode=countrycode,
-                               statecode=statecode,
-                               geo=geo,
-                               dc=dc,
-                               username=username,
-                               password=password,
-                               hear_about=hear_about,
-                               remarks=remarks)
-ttext = Template(CONFIRMATIONMAIL)
-confirmbody = ttext.substitute(contact=contact)
+if bits != "128":
+    print('Content-type:text/html\r\n\r\n')
+    print('<html>')
+    print('<head>')
+    print('<title>NLNOG RING</title>')
+    print('</head>')
+    print('<body>')
+    print('<p>Wrong answer. Please go back and try again.</p>')
+    print('</body>')
+    print('</html>')
+else:
+    ttext = Template(APPLICATIONMAIL)
+    appformbody = ttext.substitute(company=company,
+                                   companydesc=companydesc,
+                                   url=url,
+                                   contact=contact,
+                                   email=email,
+                                   nocemail=nocemail,
+                                   sshkeys=sshkeys,
+                                   autnum=autnum,
+                                   ipv6=ipv6,
+                                   ipv4=ipv4,
+                                   countrycode=countrycode,
+                                   statecode=statecode,
+                                   geo=geo,
+                                   dc=dc,
+                                   username=username,
+                                   password=password,
+                                   hear_about=hear_about,
+                                   remarks=remarks)
+    ttext = Template(CONFIRMATIONMAIL)
+    confirmbody = ttext.substitute(contact=contact)
 
-# Send mails
-sender = getpass.getuser() + '@' + socket.getfqdn()
-server = smtplib.SMTP('localhost')
+    # Send mails
+    sender = getpass.getuser() + '@' + socket.getfqdn()
+    server = smtplib.SMTP('localhost')
 
-## Application mail
-message = MIMEMultipart()
-message['From'] = "%s <%s>" % (contact,email)
-message['To'] = "NLNOG RING Admins <%s>" % (ADMINADDR)
-message['Subject'] = "RING Application from %s - %s" % (company,autnum)
-message.attach(MIMEText(appformbody, "plain"))
-if logo != None:
-    logo_name = os.path.basename(logo.filename)
-    attachment = MIMEBase("application", "octet-stream")
-    attachment.set_payload(logo.file.read())
-    encoders.encode_base64(attachment)
-    attachment.add_header(
-        "Content-Disposition",
-        "attachment; filename="+logo_name,
-    )
-    message.attach(attachment)
-text = message.as_string()
-server.sendmail(sender,ADMINADDR,text)
+    ## Application mail
+    message = MIMEMultipart()
+    message['From'] = "%s <%s>" % (contact,email)
+    message['To'] = "NLNOG RING Admins <%s>" % (ADMINADDR)
+    message['Subject'] = "RING Application from %s - %s" % (company,autnum)
+    message.attach(MIMEText(appformbody, "plain"))
+    if logo != None:
+        logo_name = os.path.basename(logo.filename)
+        attachment = MIMEBase("application", "octet-stream")
+        attachment.set_payload(logo.file.read())
+        encoders.encode_base64(attachment)
+        attachment.add_header(
+            "Content-Disposition",
+            "attachment; filename="+logo_name,
+        )
+        message.attach(attachment)
+    text = message.as_string()
+    server.sendmail(sender,ADMINADDR,text)
 
-## Confirmation mail
-message = MIMEMultipart()
-message['From'] = "NLNOG RING Admins <%s>" % (ADMINADDR)
-message['To'] = "%s <%s>" % (contact,email)
-message['Subject'] = "RING Application from %s - %s" % (company,autnum)
-message.attach(MIMEText(confirmbody, "plain"))
-text = message.as_string()
-server.sendmail(sender,email,text)
-server.quit()
+    ## Confirmation mail
+    message = MIMEMultipart()
+    message['From'] = "NLNOG RING Admins <%s>" % (ADMINADDR)
+    message['To'] = "%s <%s>" % (contact,email)
+    message['Subject'] = "RING Application from %s - %s" % (company,autnum)
+    message.attach(MIMEText(confirmbody, "plain"))
+    text = message.as_string()
+    server.sendmail(sender,email,text)
+    server.quit()
 
-print('Content-type:text/html\r\n\r\n')
-print('<html>')
-print('<head>')
-print('<title>NLNOG RING</title>')
-print('<meta http-equiv="refresh" content="0; url=/contact/application-submitted/">')
-print('</head>')
-print('<body>')
-print('<p>Application submitted. Redirecting...</p>')
-print('</body>')
-print('</html>')
+    print('Content-type:text/html\r\n\r\n')
+    print('<html>')
+    print('<head>')
+    print('<title>NLNOG RING</title>')
+    print('<meta http-equiv="refresh" content="0; url=/contact/application-submitted/">')
+    print('</head>')
+    print('<body>')
+    print('<p>Application submitted. Redirecting...</p>')
+    print('</body>')
+    print('</html>')
