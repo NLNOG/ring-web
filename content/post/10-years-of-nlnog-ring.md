@@ -1,7 +1,7 @@
 +++
 author = "Martin Pels"
 title = "10 years of NLNOG RING"
-date = "2021-01-29"
+date = "2021-01-31"
 description = "10 years of NLNOG RING"
 categories = [
     "announcement",
