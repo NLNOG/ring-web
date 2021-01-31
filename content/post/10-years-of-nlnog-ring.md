@@ -41,7 +41,7 @@ For security we did not want to rely on passwords. All user access is controlled
 
 The basis of the NLNOG RING is a shell account, which offers a lot of freedom to participants to run their own troubleshooting scripts or programs.
 To add extra value to this, each machine is provisioned with a collection of commonly used network troubleshooting tools.
-We provide also provide a DNS-interface and a [RESTful API](https://ring.nlnog.net/toolbox/restful-api/) for retrieving participant and node information, and we have a regular BGP [looking glass](http://lg.ring.nlnog.net/) providing insight into many networks.
+We provide a DNS-interface and a [RESTful API](https://ring.nlnog.net/toolbox/restful-api/) for retrieving participant and node information, and we have a regular BGP [looking glass](http://lg.ring.nlnog.net/) providing insight into many networks.
 
 NLNOG RING is a community project.
 Over the years, many people have contributed tools and code to make the project more useful.
@@ -52,7 +52,7 @@ One of the first tools was [ring-trace](https://github.com/NLNOG/nlnog-ring/blob
 Another user-contributed tool is [ring-sqa](https://github.com/NLNOG/ring-sqa), a piece of software that attempts to automatically detect connectivity problems between NLNOG RING nodes and notifies their owners.
 Events are also correlated to detect larger, sometimes Internet-wide outages, which are published on a [dashboard](http://sqa.ring.nlnog.net/).
 
-Since 2013 we also cooperate with RIPE Atlas, to combine the strengths of the two platforms.
+Since 2013 we also cooperate with [RIPE Atlas](https://atlas.ripe.net/), to combine the strengths of the two platforms.
 NLNOG RING nodes are selectable as [measurement targets](https://atlas.ripe.net/targets/ringnodes/list/) in the RIPE Atlas interface.
 Furthermore, the RIPE Atlas [tools package](https://github.com/RIPE-NCC/ripe-atlas-tools) is installed on all NLNOG RING nodes, so participants can integrate RIPE Atlas measurements in scripts run on the RING.
 
