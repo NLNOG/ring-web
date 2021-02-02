@@ -34,8 +34,8 @@ And so, in January 2011, NLNOG RING [was born](http://mailman.nlnog.net/pipermai
 The NLNOG RING is a “looking glass on steroids”. Participants join the project by making a (virtual) server available, hosted inside their own network. In return they gain access to their own shell account on all the machines provided by all other participating networks.
 
 Right from the start we were conscious of the fact that we would have to manage a potentially large number of systems with a small group of volunteers.
-To do this in a time-efficient matter we deployed [Puppet](https://puppet.com/) on all provided systems.
-This allowed us to install software tools and configure users in a centralized matter.
+To do this in a time-efficient manner we deployed [Puppet](https://puppet.com/) on all provided systems.
+This allowed us to install software tools and configure users in a centralized manner.
 To further limit the scope of work we decided to support only a single operating system: [Ubuntu LTS](https://ubuntu.com/blog/what-is-an-ubuntu-lts-release).
 For security we did not want to rely on passwords. All user access is controlled through SSH keys and there is no superuser access for any of the participants.
 
@@ -77,7 +77,7 @@ At the time of writing we have 472 participating autonomous systems, with (virtu
 ![Map of NLNOG RING nodes (January 2021)](/images/post/10-years-of-nlnog-ring/ring-map=january-2021.png "Map of NLNOG RING nodes (January 2021)")
 
 Supporting all these machines was significantly increasing in load on our central Puppet server, to a point where in 2016 configuration of a single machine would take more than 30 minutes.
-In addition to this we were facing the planned obsolence of Puppet 2, which meant we would have to rewrite a significant part of our configurations to a syntax supported by Puppet 3.
+In addition to this we were facing the planned obsolescence of Puppet 2, which meant we would have to rewrite a significant part of our configurations to a syntax supported by Puppet 3.
 Altogether a good opportunity to re-evaluate our architecture.
 
 After evaluating several configuration management systems we decided on [Ansible](https://www.ansible.com/), mostly because of its support for a masterless “pull” model.
