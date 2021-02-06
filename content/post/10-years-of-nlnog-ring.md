@@ -74,7 +74,7 @@ After giving our first public presentation at [RIPE62](https://ripe62.ripe.net/p
 While The Netherlands is still the country with the most active participants (93 nodes as of January 2021), the majority of participants is based elsewhere.
 At the time of writing we have 472 participating autonomous systems, with (virtual) machines in [56 countries](http://map.ring.nlnog.net/).
 
-![Map of NLNOG RING nodes (January 2021)](/images/post/10-years-of-nlnog-ring/ring-map=january-2021.png "Map of NLNOG RING nodes (January 2021)")
+![Map of NLNOG RING nodes (January 2021)](/images/post/10-years-of-nlnog-ring/ring-map-january-2021.png "Map of NLNOG RING nodes (January 2021)")
 
 Supporting all these machines was significantly increasing in load on our central Puppet server, to a point where in 2016 configuration of a single machine would take more than 30 minutes.
 In addition to this we were facing the planned obsolescence of Puppet 2, which meant we would have to rewrite a significant part of our configurations to a syntax supported by Puppet 3.
