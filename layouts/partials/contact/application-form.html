@@ -13,6 +13,7 @@ $.ajax({
                 }
 });
 function generate_countries(data) {
+    $('#countrycode').append('<option disabled selected value></option>');
     var countries = data.countries;
     for (var i = 0; i < countries.length; i++) {
         var option = '<option value="' + countries[i]["alpha2Code"] + '">' + countries[i]["name"] + '</option>'
