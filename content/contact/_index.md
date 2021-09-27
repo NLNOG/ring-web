@@ -26,15 +26,15 @@ A mailing list is available for participants of the ring, please visit the [mail
 Job Snijders
 * E-mail: [job@sobornost.net](mailto:job@sobornost.net)
 * Affiliation: Fastly
-* PGP Key: [sobornost.net/~job/gpg-key.txt](http://sobornost.net/~job/gpg-key.txt)
-* SSH Key: [sobornost.net/~job/ssh-keys.txt](http://sobornost.net/~job/ssh-keys.txt)
+* PGP Key: [sobornost.net/~job/gpg-key.txt](https://sobornost.net/~job/gpg-key.txt)
+* SSH Key: [sobornost.net/~job/ssh-keys.txt](https://sobornost.net/~job/ssh-keys.txt)
 
 Martin Pels
 
 * E-mail: [martin@rodecker.nl](mailto:martin@rodecker.nl)
 * Affiliation: RIPE NCC
-* PGP Key: [rodecker.nl/key.asc](http://www.rodecker.nl/misc/key.asc)
-* SSH Key: [rodecker.nl/misc/nlnog-ssh.txt](http://www.rodecker.nl/misc/nlnog-ssh.txt)
+* PGP Key: [rodecker.nl/key.asc](https://www.rodecker.nl/misc/key.asc)
+* SSH Key: [rodecker.nl/misc/nlnog-ssh.txt](https://www.rodecker.nl/misc/nlnog-ssh.txt)
 
 Sander Smeenk
 
