@@ -17,7 +17,7 @@ Participation is open to everybody who meets the following requirements:
 
 * You are a network operator
 * The organisation you work for has BGP routers connected to the “Default Free Zone” and maybe even IXP’s.
-* Your organisation has its own ASN, IPv4 and IPv6 prefix(es).
+* Your organisation has its own ASN and IP prefix(es).
 * You have enable or configure rights on those routers.
 * You are involved in the networkers community.
 * You have permission from your organisation to become involved in the NLNOG RING.
@@ -34,7 +34,6 @@ The following requirements are mandatory:
 
 * Clean Ubuntu 18.04 Bionic Beaver 64-bit (amd64/x86_64) Server Edition installation (no special packages are required except openssh-server)
 * 64 bit CPU
-* 1 globally reachable and unique statically configured **IPv4** address
 * 1 globally reachable and unique statically configured **IPv6** address
 * No packet filtering between your RING node and the internet
 * You are willing to give full sudo access to the Ring-Admins (we will get to the security considerations later in this document)
