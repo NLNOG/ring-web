@@ -44,7 +44,7 @@ The following suggestions are indicative:
 
 * 1 core or CPU
 * 20 gigabyte disk space
-* At least 1024 megabyte RAM, but more is better
+* At least 2 gigabyte RAM, but more is better
 * 10mbit NIC (more is fine)
 
 Please decide for yourself what is appropiate; the machine will be a mere shell server managed by ansible.
