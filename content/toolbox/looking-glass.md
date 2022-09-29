@@ -31,7 +31,7 @@ The NLNOG RING offers a looking glass, solely accessible through SSH by RING use
 Currently the ring is using [BIRD](https://bird.network.cz/) as the BGP speaker, it might take some getting used to get valuable information out of it. ;-)
 
 ## Peering with the Looking Glass
-Peering with this Looking Glass is optional for ring users. If you want to peer with NLNOG RING, send [us](mailto:ring-admins@nlnog.net) your details or create a [pull-request](https://github.com/NLNOG/ring-ansible/blob/master/roles/bird/vars/peers.yml), and configure a session with the following information:
+Peering with this Looking Glass is optional for ring users. If you want to peer with NLNOG RING, send [us](mailto:ring-admins@nlnog.net) your details or create a [pull-request](https://github.com/NLNOG/ring-ansible/blob/master/roles/openbgpd/vars/peers.yml), and configure a session with the following information:
 ```
 AS: 199036
 IPv4: 82.94.230.130 (lg01.infra.ring.nlnog.net)
