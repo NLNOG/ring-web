@@ -7,7 +7,7 @@ layout = "single"
 ## Looking Glass web interface
 There is a public web interface available at the following address:
 
-> http://lg.ring.nlnog.net/
+> https://lg.ring.nlnog.net/
 
 ## How to use the Looking Glass through SSH
 The NLNOG RING offers a looking glass, solely accessible through SSH by RING users! You can ssh to `lg01.infra.ring.nlnog.net`. Don’t forget to use the proper username! If you ssh to this host you should drop straight to a dialog menu, where you can select either IPv4 or IPv6. Here are some pointers how to retrieve information:
