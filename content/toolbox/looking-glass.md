@@ -9,7 +9,7 @@ There is a public web interface available at the following address:
 
 > https://lg.ring.nlnog.net/
 
-Currently the ring LG uses [OpenBGPd](https://openbgpd.org/) as the BGP speaker.
+Source code for the looking glass web interface can be found in our [Github repository](https://github.com/NLNOG/lg.ring.nlnog.net). Currently the ring LG uses [OpenBGPd](https://openbgpd.org/) as the BGP speaker.
 
 ## How to use the Looking Glass through SSH
 
@@ -24,5 +24,7 @@ IPv6: 2001:7b8:62b:1:0:d4ff:fe72:7848 (lg02.infra.ring.nlnog.net)
 Type: eBGP Multi-Hop
 Policy: import NONE from AS199036, export ANY
 ```
-The fine people at [BIT](https://www.bit.nl/) sponsored the RING with the Autonomous System – `AS199036`.
+Our looking glass server supports add-path, so feel free to configure it.
+
+The fine people at [BIT](https://www.bit.nl/) sponsored the RING with the Autonomous System – `AS199036` and the virtual server running the looking glass.
 
