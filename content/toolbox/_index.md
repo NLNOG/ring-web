@@ -5,6 +5,20 @@ layout = "single"
 
 Below you can find several tools which make use of the ring setup. If you have written any tools and are willing to share them, or if you have great ideas for tools which are missing, please [contact](/contact) us!
 
+## ring-ssh
+The use of SSH Agent forwarding poses a security risk, in that it forwards all identities in your agent to the remote system. Individuals with root access on the remote system may take over your agent’s socket and use it to login on other systems. `ring-ssh` mitigates this risk by creating a separate `ssh-agent` instance containing only your ring-identity, and forwarding this agent to the remote system. The script can be downloaded [here](https://github.com/NLNOG/nlnog-ring/raw/master/scripts/ring-ssh).
+
+**Usage:**
+
+```
+   ring-ssh [arguments and host]
+```
+**Example:**
+
+```
+% ring-ssh coloclue01.ring.nlnog.net
+```
+
 ## ring-all
 
 This script allows you to run a command on all servers which participate in the NLNOG ring. `ring-all` can be found in `/usr/local/bin` on all ring servers. You can also download the script and the accompanying ruby module so it can be run from other machines.
@@ -66,11 +80,6 @@ previder01:          2.792
 leaseweb01:          2.464
 15 servers: 1ms average
 ```
-
-## graphite
-A graphite setup has been created to graph latency between all nodes. Our graphite install can be found at [graphite.ring.nlnog.net](http://graphite.ring.nlnog.net/) (note: currently offline).
-
-Graphite offers the possibility for creating your own graphs and dashboards. To create an account for your RING user, place a password in the file `~/graphite.pass` on `manage.ring.nlnog.net`. The graphite web login account will be automatically created within one hour.
 
 ## ring-trace
 ring-trace is a tool which allows you to create graphs which visualise traceroutes from a number of ring sources.
@@ -228,16 +237,75 @@ Options:
     [...]
 ```
 
-## ring-ssh
-The use of SSH Agent forwarding poses a security risk, in that it forwards all identities in your agent to the remote system. Individuals with root access on the remote system may take over your agent’s socket and use it to login on other systems. `ring-ssh` mitigates this risk by creating a separate `ssh-agent` instance containing only your ring-identity, and forwarding this agent to the remote system. The script can be downloaded [here](https://github.com/NLNOG/nlnog-ring/raw/master/scripts/ring-ssh).
+## ring-mtr
+A tool to automatically run My Traceroute (MTR) instances between a subset of the NLNOG Ring nodes and a single node called "root". MTRs are run in both directions : from the root as well as towards the root. This provides useful insights regarding issues (such as packet loss or increased latency) on the paths between the nodes. The remote ("non-root") nodes can either be chosen at random from the full list of nodes, manually selected using their short hostname (without .ring.nlnog.net) or a combination of both. The root node must be specified using its short hostname, and is the node you want to check connectivity to/from. It is usually your node.
 
 **Usage:**
 
 ```
-   ring-ssh [arguments and host]
+usage: ring-mtr [-h] [-u USER] [-r ROOT] [-n NUMBER] [-f [FORCE [FORCE ...]]]
+                [-c CYCLES] [--connect-timeout CONNECT_TIMEOUT] [-4] [-6]
+                [--retries RETRIES]
+
+Perform a MTR towards and from a subset of NLNOG ring nodes
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u USER, --user USER  SSH user.
+                        Required, can be set using the env var RING_MTR_USER
+  -r ROOT, --root ROOT  Ring node to/from which all MTRs will be performed.
+                        Required, can be set using the env var RING_MTR_ROOT
+  -n NUMBER, --number NUMBER
+                        Number of ring nodes to randomly select (can be 0).
+                        Defaults to 10, can be set using the env var RING_MTR_NUMBER
+  -f [FORCE [FORCE ...]], --force [FORCE [FORCE ...]]
+                        Force some nodes (short hostnames) to be present in the list if they have not been selected already.
+                        Can be set using the env var RING_MTR_FORCE , in a comma-separated list.
+  -c CYCLES, --cycles CYCLES
+                        MTR report cycles.
+                        Defaults to 10, can be set using the env var RING_MTR_CYCLES
+  --connect-timeout CONNECT_TIMEOUT
+                        Timeout, in seconds, when connecting to the nodes.
+                        Defaults to 30, can be set using the env var RING_MTR_CONNECT_TIMEOUT
+  -4, --ipv4            Force IPv4 MTRs. Mutually exclusive with --ipv6
+                        Default to false, can be set by setting the env var RING_MTR_FORCE_IPV4 to 'true'
+  -6, --ipv6            Force IPv6 MTRs. Mutually exclusive with --ipv4
+                        Default to false, can be set by setting the env var RING_MTR_FORCE_IPV6 to 'true'
+  --retries RETRIES     Number of retries when connecting to the nodes.
+                        Defaults to 1, can be set using the env var RING_MTR_CONNECT_RETRIES
 ```
+
 **Example:**
 
 ```
-% ring-ssh coloclue01.ring.nlnog.net
+% ring-mtr -u REDACTED -r ovh01 -f amazon01 digitalocean01 -n 2
+INFO:__main__:Performing bidirectionnal MTRs  with 10 cycles between 'ovh01' and the following nodes : ['natoresearch01', 'zitcom01', 'amazon01', 'digitalocean01'] using user 'REDACTED', 30s of connect timeout and 1 connect retries.
+
+-------------------------
+Node: natoresearch01.ring.nlnog.net
+
+MTR inbound : from natoresearch01.ring.nlnog.net to ovh01.ring.nlnog.net :
+
+   Start: 2022-10-10T07:33:03+0000
+   HOST: natoresearch01.ring.nlnog.net                           Loss%   Snt   Last   Avg  Best  Wrst StDev
+     1. AS46997  2602:feda:30:cafe::eeee                          0.0%    10    0.1   0.1   0.1   0.2   0.0
+     2. AS???    Host-By.DMIT.com (2605:52c0:1000:0:b795:0:1:1)   0.0%    10    0.3   0.3   0.3   0.6   0.1
+     3. AS???    Host-By.DMIT.com (2605:52c0:1000:0:38a:0:1:1)    0.0%    10    0.7   1.1   0.7   2.9   0.7
+     4. AS???    ???                                             100.0    10    0.0   0.0   0.0   0.0   0.0
+     5. AS???    ???                                             100.0    10    0.0   0.0   0.0   0.0   0.0
+     6. AS16276  2001:41d0:aaaa:100::5                            0.0%    10   20.3  15.9   6.2  21.9   5.2
+     7. AS???    ???                                             100.0    10    0.0   0.0   0.0   0.0   0.0
+     8. AS16276  be100-1370.chi-1-a9.il.us (2607:5300::59)       50.0%    10   65.5  65.5  65.4  65.6   0.1
+     9. AS???    ???                                             100.0    10    0.0   0.0   0.0   0.0   0.0
+    10. AS16276  nyc-ny1-sbb1-8k.nj.us (2607:5300::1c7)          90.0%    10   72.1  72.1  72.1  72.1   0.0
+    11. AS16276  lon-thw-sbb1-nc5.uk.eu (2607:5300::18a)         70.0%    10  141.4 141.2 141.0 141.4   0.2
+    12. AS16276  be103.gra-g1-nc5.fr.eu (2001:41d0::430)          0.0%    10  141.8 142.0 141.6 144.5   0.9
+    13. AS16276  vl100.gra-d1-a75.fr.eu (2001:41d0::42d)          0.0%    10  139.7 139.7 139.6 140.0   0.1
+    14. AS16276  2001:41d0:0:50::5:f9                             0.0%    10  140.2 140.3 140.2 140.5   0.1
+    15. AS16276  2001:41d0:0:50::1:8839                           0.0%    10  140.2 140.3 140.2 140.4   0.1
+    16. AS16276  ovh01.ring.nlnog.net (2001:41d0:a:643a::137)     0.0%    10  140.1 140.1 140.1 140.2   0.1
+
+MTR outbound : from ovh01.ring.nlnog.net to natoresearch01.ring.nlnog.net :
+
+[...]
 ```
