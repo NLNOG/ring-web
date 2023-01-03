@@ -32,7 +32,7 @@ Admission to the project is discretionary and judged by perceived value for the 
 
 The following requirements are mandatory:
 
-* Clean Ubuntu 18.04 Bionic Beaver 64-bit (amd64/x86_64) Server Edition installation (no special packages are required except openssh-server)
+* Clean Ubuntu 22.04 Jammy Jellyfish 64-bit (amd64/x86_64) Server Edition installation (no special packages are required except openssh-server)
 * 64 bit CPU
 * 1 globally reachable and unique statically configured **IPv6** address
 * No packet filtering between your RING node and the internet
