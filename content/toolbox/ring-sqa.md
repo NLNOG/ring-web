@@ -34,7 +34,7 @@ job@ringnode01:~$ sudo systemctl restart ring-sqa6
 ```
 Et voila! After 30 minutes the machine will stand guard over your network. RING participants with multiple hubs or datacenters will benefit from spinning up more nodes, as monitoring is from each RING nodes individual perspective.
 
-We extend a HUGE thank you to [Saku Ytt](https://github.com/ytti) who wrote RING SQA. Please send him beer, chocolate and flowers.
+We extend a HUGE thank you to [Saku Ytti](https://github.com/ytti) who wrote RING SQA. Please send him beer, chocolate, and flowers.
 
 Below we’ve included an example outage alert.
 
