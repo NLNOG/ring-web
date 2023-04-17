@@ -1,7 +1,7 @@
 +++
 author = "RING Admins"
 title = "Pentanet (AU) joined the RING"
-date = "2023-04-13"
+date = "2023-04-17"
 description = "Pentanet (AU) joined the RING"
 categories = [
     "participants",
