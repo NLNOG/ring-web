@@ -240,6 +240,8 @@ Options:
 ## ring-mtr
 A tool to automatically run My Traceroute (MTR) instances between a subset of the NLNOG Ring nodes and a single node called "root". MTRs are run in both directions : from the root as well as towards the root. This provides useful insights regarding issues (such as packet loss or increased latency) on the paths between the nodes. The remote ("non-root") nodes can either be chosen at random from the full list of nodes, manually selected using their short hostname (without .ring.nlnog.net) or a combination of both. The root node must be specified using its short hostname, and is the node you want to check connectivity to/from. It is usually your node.
 
+The code can be found [on Github](https://github.com/enix/ring-mtr).
+
 **Usage:**
 
 ```
