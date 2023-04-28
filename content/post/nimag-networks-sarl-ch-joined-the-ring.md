@@ -1,8 +1,8 @@
 +++
 author = "Martin Pels"
-title = "Nimag Networks Sàrl (CH) joined the RING"
+title = "Nimag Networks S&#224;rl (CH) joined the RING"
 date = "2013-03-17"
-description = "Nimag Networks Sàrl (CH) joined the RING"
+description = "Nimag Networks S&#224;rl (CH) joined the RING"
 categories = [
     "participants",
 ]
