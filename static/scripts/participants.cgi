@@ -38,8 +38,8 @@ try:
             _pmachines[node['hostname'].split('.')[0]] = True
             _pasns[node['asn']] = True
         if participant['id'] in pcounters.keys():
-            pcounters[participant['id']]['machines'] = _pmachines.keys()
-            pcounters[participant['id']]['asns'] = _pasns.keys()
+            pcounters[participant['id']]['machines'] = list(_pmachines.keys())
+            pcounters[participant['id']]['asns'] = list(_pasns.keys())
 
     # Gather total counters
     counters['countries'] = len(_countries.keys())
