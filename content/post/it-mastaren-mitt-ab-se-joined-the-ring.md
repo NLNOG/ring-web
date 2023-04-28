@@ -1,8 +1,8 @@
 +++
 author = "Job Snijders"
-title = "IT-m&#228;staren Mitt AB (SE) joined the RING"
+title = "IT-mastaren Mitt AB (SE) joined the RING"
 date = "2012-11-10"
-description = "IT-m&#228;staren Mitt AB (SE) joined the RING"
+description = "IT-mastaren Mitt AB (SE) joined the RING"
 categories = [
     "participants",
 ]
