@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-import os, random, simplejson, urllib
+#!/usr/bin/env python3
+import os, random, simplejson, urllib.request
 
 API="https://api.ring.nlnog.net/1.0/"
 PARTICIPANTS=API + '/participants'
@@ -12,15 +12,15 @@ print("Content-Type: text/plain\n\n")
 try:
     _countries = {}
     _asns = {}
-    response = simplejson.load(urllib.urlopen(PARTICIPANTS))
+    response = simplejson.load(urllib.request.urlopen(PARTICIPANTS))
     participants = response['results']['participants']
-    response2 = simplejson.load(urllib.urlopen(NODES))
+    response2 = simplejson.load(urllib.request.urlopen(NODES))
     allnodes = response2['results']['nodes']
 
     for participant in participants:
         _pmachines = {}
         _pasns = {}
-        nodes = filter(lambda x: x['participant'] == participant['id'], allnodes)
+        nodes = list(filter(lambda x: x['participant'] == participant['id'], allnodes))
         if len(nodes) > 0:
             counters['orgs'] = counters['orgs'] + 1
             pcounters[participant['id']] = {}
