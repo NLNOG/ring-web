@@ -10,6 +10,6 @@ categories = [
 
 BITTERBAL - AS 200995 - joined the RING today.
 
-> BITTERBAL is the LAB network of BIT (AS12859). This ASN is mostly used for tests, measurements and PoC&#x27;s.
+> BITTERBAL is the LAB network of BIT (AS12859). This ASN is mostly used for tests, measurements and PoCs.
 
 Users can connect to bitterbal01.ring.nlnog.net, which is located in Netherlands.
