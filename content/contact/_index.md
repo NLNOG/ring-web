@@ -44,7 +44,7 @@ Sander Smeenk
 * SSH Key: [freshdot.net/s/ssmeenk.ssh.pub](https://www.freshdot.net/s/ssmeenk.ssh.pub)
 
 Teun Vink
-* Email: [nlnog@teun.tv](nlnog@teun.tv)
+* Email: [nlnog@teun.tv](mailto:nlnog@teun.tv)
 * Affiliation: NLNOG Board / BIT
 * PGP Key: [https://teun.tv/nlnog.asc](https://teun.tv/nlnog.asc)
 * SSH key: [https://teun.tv/nlnog.pub](https://teun.tv/nlnog.pub)
