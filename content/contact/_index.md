@@ -15,6 +15,10 @@ You can contact the Ring-Admins if you have any questions or abuse reports. Mess
 
 You can connect to [IRCNet](http://en.wikipedia.org/wiki/IRCnet) and join the `#ring` channel, please identify yourself clearly.
 
+** Discord:**
+
+Feel free to join the [NLNOG Discord server](https://discord.gg/A42ctrPtFr) and join the `#ring` channel, please identify yourself clearly. RING admins are identified by the `@ring-admin` role, which you can mention to get their attention.
+
 **Mailing list:**
 
 A mailing list is available for participants of the ring, please visit the [mailman page](http://mailman.nlnog.net/listinfo/ring-users) to subscribe or view the archives.
