@@ -48,7 +48,7 @@ Command templates:
 
 ring-admin add participant "$company" "$contact" $email $nocemail $$username "$companydesc" $url
 
-ring-admin add machine $$username $$hostname $autnum $countrycode $geo "$dc" $ipv6 $ipv4 $statecode 
+ring-admin add machine $$username $$hostname $autnum $countrycode "$geo" "$dc" $ipv6 $ipv4 $statecode
 
 --
 This mail was sent via a contact form on NLNOG RING https://ring.nlnog.net/
@@ -170,7 +170,8 @@ else:
 
     ## Application mail
     message = MIMEMultipart()
-    message['From'] = "%s <%s>" % (contact,email)
+    message['From'] = "RING Application form <%s>" % (ADMINADDR)
+    message['Reply-To'] = "%s <%s>" % (contact,email)
     message['To'] = "NLNOG RING Admins <%s>" % (ADMINADDR)
     message['Subject'] = "RING Application from %s - %s" % (company,autnum)
     message.attach(MIMEText(appformbody, "plain"))
