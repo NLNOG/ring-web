@@ -40,7 +40,11 @@ function generate_html(data) {
     var participantsrand = shuffle(Object.keys(data.participants));
     for (var i = 0; i < participantsrand.length; i++) {
         var participant = data.participants[participantsrand[i]];
-        var machines = participant['machines'].join(', ');
+        var machinelist = [];
+        participant['machines'].forEach(function (machine, a) {
+            asnlist.push('<a href="https://api.ring.nlnog.net/1.0/nodes/hostname/' + machine + '.ring.nlnog.net">' + machine + '</a>');
+        });
+        var machines = machinelist.join(', ');
         var asnlist = [];
         participant['asns'].forEach(function (asn, a) {
             asnlist.push('<a href="http://www.ris.ripe.net/dashboard/AS' + asn + '">' + asn + '</a>');
