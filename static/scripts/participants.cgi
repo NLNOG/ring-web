@@ -20,6 +20,7 @@ try:
     for participant in participants:
         _pmachines = {}
         _pasns = {}
+        _pcountries = {}
         nodes = list(filter(lambda x: x['participant'] == participant['id'], allnodes))
         if len(nodes) > 0:
             counters['orgs'] = counters['orgs'] + 1
@@ -37,9 +38,11 @@ try:
             _asns[node['asn']] = True
             _pmachines[node['hostname'].split('.')[0]] = True
             _pasns[node['asn']] = True
+            _pcountries[node['countrycode']] = True
         if participant['id'] in pcounters.keys():
-            pcounters[participant['id']]['machines'] = list(_pmachines.keys())
-            pcounters[participant['id']]['asns'] = list(_pasns.keys())
+            pcounters[participant['id']]['machines'] = sorted(list(_pmachines.keys()))
+            pcounters[participant['id']]['asns'] = sorted(list(_pasns.keys()))
+            pcounters[participant['id']]['countries'] = sorted(list(_pcountries.keys()))
 
     # Gather total counters
     counters['countries'] = len(_countries.keys())

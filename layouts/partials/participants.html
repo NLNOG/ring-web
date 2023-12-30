@@ -46,8 +46,13 @@ function generate_html(data) {
             asnlist.push('<a href="http://www.ris.ripe.net/dashboard/AS' + asn + '">' + asn + '</a>');
         });
         var asns = asnlist.join(', ');
+        var cclist = [];
+        participant['countries'].forEach(function (cc, a) {
+            cclist.push('<a href="https://www.iso.org/obp/ui/#iso:code:3166:' + cc + '">' + cc + '</a>');
+        });
+        var countries = cclist.join(', ');
         $('#participants').append(
-            '<hr><table><tr><td width="300px" style="vertical-align: middle; text-align:center;"><img src="/images/ring-logos/' + participant['logo'] + '" /></td><td style="vertical-align: middle;"><h3>' + participant['name'] + '</h3><ul><li>website: <a title="' + participant['url'] + '" href="' + participant['url'] + '" target="_blank">' + participant['url'] + '</a></li><li>machines: ' + machines + '</li><li>ASNs: ' + asns + '</li><ul></td></tr></table>'
+            '<hr><table><tr><td width="300px" style="vertical-align: middle; text-align:center;"><img src="/images/ring-logos/' + participant['logo'] + '" /></td><td style="vertical-align: middle;"><h3>' + participant['name'] + '</h3><ul><li>website: <a title="' + participant['url'] + '" href="' + participant['url'] + '" target="_blank">' + participant['url'] + '</a></li><li>machines: ' + machines + '</li><li>ASNs: ' + asns + '</li><li>Countries: ' + countries + '</li><ul></td></tr></table>'
         );
     }
 }
