@@ -98,10 +98,10 @@ if form.getvalue('autnum'):
     autnum = html.escape(form.getvalue('autnum'),quote=True)
 ipv6 = ""
 if form.getvalue('ipv6'):
-    ipv6 = html.escape(form.getvalue('ipv6'),quote=True)
+    ipv6 = html.escape(form.getvalue('ipv6'),quote=True).split("/")[0]
 ipv4 = ""
 if form.getvalue('ipv4'):
-    ipv4 = html.escape(form.getvalue('ipv4'),quote=True)
+    ipv4 = html.escape(form.getvalue('ipv4'),quote=True).split("/")[0]
 countrycode = ""
 if form.getvalue('countrycode'):
     countrycode = html.escape(form.getvalue('countrycode'),quote=True)
