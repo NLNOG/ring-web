@@ -47,7 +47,7 @@ function generate_html(data) {
         var machines = machinelist.join(', ');
         var asnlist = [];
         participant['asns'].forEach(function (asn, a) {
-            asnlist.push('<a href="http://www.ris.ripe.net/dashboard/AS' + asn + '">' + asn + '</a>');
+            asnlist.push('<a href="https://stat.ripe.net/app/AS' + asn + '">' + asn + '</a>');
         });
         var asns = asnlist.join(', ');
         var cclist = [];
