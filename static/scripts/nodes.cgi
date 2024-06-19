@@ -24,7 +24,10 @@ alive = {
 participants = requests.get("https://api.ring.nlnog.net/1.0/participants").json()["results"]["participants"]
 pmap = {}
 for p in participants:
-    pmap[p["id"]] = f"""<a href='{p.get("url", "")}' target=_blank>{p["company"]}</a>"""
+    pname = p["company"]
+    if len(pname) > 30:
+        pname = pname[:25] + "..."
+    pmap[p["id"]] = f"""<a href='{p.get("url", "")}' target=_blank title='{p['company']}'>{pname}</a>"""
 
 nodes = requests.get("https://api.ring.nlnog.net/1.0/nodes").json()
 for node in nodes["results"]["nodes"]:
