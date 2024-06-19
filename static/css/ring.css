@@ -39,8 +39,8 @@ input, textarea, select {
 table.nodes {
     font-family: monospace;
     white-space: pre;
+    font-size: 0.8em;
 }
 thead.nodes {
     font-weight: bold;
-    font-size: 0.8em;
 }
