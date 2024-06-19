@@ -4,16 +4,19 @@ import requests
 import pycountry
 
 style = {
+    None: "err",
     0: "err",
     1: "ok",
 }
 
 nodestatus = {
+    None: "inactive",
     0: "inactive",
     1: "active",
 }
 
 alive = {
+    None: "offline",
     0: "offline",
     1: "online",
 }
