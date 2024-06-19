@@ -29,3 +29,17 @@ input, textarea, select {
         max-width: 250px;
     }
 }
+
+.node_ok {
+    #color: green;
+}
+.node_err {
+    color: red;
+}
+table.nodes {
+    font-family: monospace;
+    white-space: pre;
+}
+thead.nodes {
+    font-weight: bold;
+}
