@@ -45,5 +45,6 @@ thead.nodes {
     font-weight: bold;
 }
 tr.nodes {
-    border-bottom: solid 1pt #ccc;
+    border-bottom: 1px solid #aaa;
+    vertical-align: top;
 }
