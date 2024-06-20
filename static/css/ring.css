@@ -50,3 +50,7 @@ tr.nodes {
 td.nodes {
     vertical-align: top;
 }
+
+.container {
+    max-width: 60em;
+}
