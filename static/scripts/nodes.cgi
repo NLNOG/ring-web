@@ -38,9 +38,7 @@ for node in nodes["results"]["nodes"]:
         node["ip"] = f"<div title='node is {alive[node['alive_ipv4']]} on IPv4' class='pre node_{style[node['alive_ipv4']]}'>{node['ipv4']}</div><br>"
     if node["ipv6"]:
         node["ip"] = f"{node['ip']}<div title='node is {alive[node['alive_ipv6']]} on IPv6' class='pre node_{style[node['alive_ipv6']]}'>{node['ipv6']}</div>"
-    if node["countrycode"]:
-        country = pycountry.countries.get(alpha_2=node["countrycode"])
-        node["countrycode"] = f"{country.name} ({country.alpha_2}) {country.flag}"
+    node["location"] = f"{country.name} ({country.alpha_2}) {country.flag}"
 
 print("Content-Type: text/plain\n\n")
 print(json.dumps(nodes["results"]["nodes"]))
