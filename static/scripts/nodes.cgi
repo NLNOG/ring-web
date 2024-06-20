@@ -32,13 +32,16 @@ for p in participants:
 nodes = requests.get("https://api.ring.nlnog.net/1.0/nodes").json()
 for node in nodes["results"]["nodes"]:
     node["hostname"] = f"<a href='https://map.ring.nlnog.net/?node={node['id']}'><div title='node is {nodestatus[node['active']]}' class='pre node_{style[node['active']]}'>{node['hostname'].replace('.ring.nlnog.net', '')}</div></a>"
-    node["participant"] = f"{pmap[node['participant']]}<a href='https://www.peeringdb.com/asn/{node['asn']}'><div class='pre'>{node['asn']}</div></a>"
+    node["participant"] = f"{pmap[node['participant']]}<a href='https://www.peeringdb.com/asn/{node['asn']}'><div class='pre'>AS{node['asn']}</div></a>"
     node["ip"] = ""
     if node["ipv4"]:
-        node["ip"] = f"<div title='node is {alive[node['alive_ipv4']]} on IPv4' class='pre node_{style[node['alive_ipv4']]}'>{node['ipv4']}</div><br>"
+        node["ip"] = f"<div title='node is {alive[node['alive_ipv4']]} on IPv4' class='pre node_{style[node['alive_ipv4']]}'>{node['ipv4']}</div>"
     if node["ipv6"]:
         node["ip"] = f"{node['ip']}<div title='node is {alive[node['alive_ipv6']]} on IPv6' class='pre node_{style[node['alive_ipv6']]}'>{node['ipv6']}</div>"
+    country = pycountry.countries.get(alpha_2=node["countrycode"])
     node["location"] = f"{country.name} ({country.alpha_2}) {country.flag}"
+    if node["city"]:
+        node["location"] = f"{node['city']}<br>{node['location']}"
 
-print("Content-Type: text/plain\n\n")
+print("Content-Type: application/json\n\n")
 print(json.dumps(nodes["results"]["nodes"]))
