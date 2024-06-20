@@ -46,5 +46,7 @@ thead.nodes {
 }
 tr.nodes {
     border-bottom: 1px solid #aaa;
+}
+td.nodes {
     vertical-align: top;
 }
