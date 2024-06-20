@@ -44,3 +44,6 @@ table.nodes {
 thead.nodes {
     font-weight: bold;
 }
+tr.nodes {
+    border-bottom: solid 1pt #ccc;
+}

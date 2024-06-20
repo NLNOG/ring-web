@@ -8,42 +8,40 @@
 
 <table id="nodetable" class="ui celled table nodes">
 	<thead class=nodes>
-		<tr>
+		<tr class=nodes>
 			<td>node</td>
 			<td>participant</td>
-			<td>ASN</td>
-			<td>city</td>
-			<td>country</td>
+            <td>IP</td>
+			<td>location</td>
 		</tr>
 	</thead>
 </table>
     <script>
     $(document).ready(function () {
     $('#nodetable').dataTable( {
-	paging: false,
-	ajax: {
-	   url: '/scripts/nodes.cgi',
-           dataSrc: '',
+        paging: false,
+        ajax: {
+           url: '/scripts/nodes.cgi',
+               dataSrc: '',
+            },
+        fixedHeader: {
+            header: true,
         },
-	fixedHeader: {
-		header: true,
-	},
-        columns: [
+            columns: [
             { data: 'hostname' },
             { data: 'participant' },
-	    { data: 'asn' },
-	    { data: 'city' },
-            { data: 'countrycode' },
+            { data: 'ip' },
+            { data: 'location' },
+            ],
+        columnDefs: [
+            { targets: 2,
+              className: 'dt-body-right'
+            },
         ],
-	columnDefs: [
-	    { targets: 2,
-	      className: 'dt-body-right'
-	    },
-	],
-    order: [
-        [0, 'asc'],
-        [1, 'asc']
-    ]
+        order: [
+            [0, 'asc'],
+            [1, 'asc']
+        ]
     })
     });
     </script>
