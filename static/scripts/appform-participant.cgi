@@ -96,6 +96,7 @@ if form.getvalue('sshkeys'):
 autnum = ""
 if form.getvalue('autnum'):
     autnum = html.escape(form.getvalue('autnum'),quote=True)
+    autnum = autnum.replace("AS", "")
 ipv6 = ""
 if form.getvalue('ipv6'):
     ipv6 = html.escape(form.getvalue('ipv6'),quote=True).split("/")[0]
@@ -111,6 +112,7 @@ if form.getvalue('statecode'):
 geo = ""
 if form.getvalue('geo'):
     geo = html.escape(form.getvalue('geo'),quote=True)
+    geo = geo.replace(" ", "")
 dc = ""
 if form.getvalue('dc'):
     dc = html.escape(form.getvalue('dc'),quote=True)
@@ -119,7 +121,7 @@ if form.getvalue('username'):
     username = html.escape(form.getvalue('username'),quote=True)
 password = ""
 if form.getvalue('password'):
-    password = html.escape(form.getvalue('password'),quote=True)
+    password = form.getvalue('password')
 
 hear_about = ""
 if form.getvalue('hear_about'):
