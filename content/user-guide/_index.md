@@ -49,6 +49,7 @@ Several utilities are available to you, see the [Available Software](/user-guide
 For a list of all ring servers you can use the following resources:
 
 * [/participants/](/participants)
+* [/nodes/](/nodes)
 * `/etc/hosts` on every node
 * `dig +short txt ring.nlnog.net`
 * [/api/1.0/nodes](https://api.ring.nlnog.net/1.0/nodes)
