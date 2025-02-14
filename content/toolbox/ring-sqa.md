@@ -170,3 +170,42 @@ outage is assumed. The ring buffer's output is as following:
  0 min ago  65 measurements failed (raised alarm)
 ```
 
+## Exporting metrics to InfluxDB ##
+
+If you're running [InfluxDB](https://www.influxdata.com/) it is possible to export metrics from RING SQA. Both InfluxDB v1.8 and v2 are supported. We assume you have a running InfluxDB server available with credentials to publish metrics in a bucket or database. 
+
+You need to add the following section to your configuration (`/etc/ring-sqa/main.conf`) to export metrics to InfluxDB:
+```
+influxdb:
+   url: "http://server:8086"    # your InfluxDB server
+   bucket: "ring-sqa"           # for InfluxDB v1.8 this is the database
+   token: ""                    # for InfluxDB v1.8 use format: <username>:<password>
+   org : "nlnog"                # for InfluxDB v1.8 this can be left empty
+```
+
+This provides the `ring-sqa_measurements` metric which has the following fields:
+* `latency` to indicate the round trip time in microseconds to a destination
+* `state` to indicate the availability of a destination (`0` for unreachable, `1` for available)
+
+All measurements are tagged with the following labels:
+```
+ afi       = ipv4/ipv6
+ src_node  = Source node
+ dst_node  = Destination node
+ dst_cc    = Destination node country
+ dst_lat   = Destination node latitude
+ dst_lon   = Destination node longitude
+```
+
+## Exporting metrics to Graphite ##
+
+Metrics can be exported to [Graphite](https://graphiteapp.org) as well. The following statement needs to be added to your configuration to export metrics:
+```
+graphite: hostname:port
+```
+
+The following metrics will be exported:
+```
+nlnog.ring_sqa.<address family>.<host>.<countrycode>.<node>.state
+nlnog.ring_sqa.<address family>.<host>.<countrycode>.<node>.latency
+````
