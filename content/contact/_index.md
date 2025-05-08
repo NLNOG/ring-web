@@ -23,6 +23,9 @@ Feel free to join the [NLNOG Discord server](https://discord.gg/A42ctrPtFr) and 
 
 A mailing list is available for participants of the ring, please visit the [mailman page](http://mailman.nlnog.net/listinfo/ring-users) to subscribe or view the archives.
 
+** RIPE handle:**
+The RIPE role object for the NLNOG RING administrator role is [NA9246-RIPE](https://apps.db.ripe.net/db-web-ui/lookup?source=ripe&key=NA9246-RIPE&type=role).
+
 ---
 
 **List of Ring-Admins:**
