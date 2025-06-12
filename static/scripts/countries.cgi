@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import random, simplejson, urllib.request
 
-COUNTRIES="https://restcountries.com/v3.1/all"
+COUNTRIES="https://restcountries.com/v3.1/all?fields=cca2"
 
 print("Content-Type: text/plain\n\n")
 try:
