@@ -13,7 +13,7 @@ You can contact the Ring-Admins if you have any questions or abuse reports. Mess
 
 **Internet Relay Chat:**
 
-You can connect to [IRCNet](http://en.wikipedia.org/wiki/IRCnet) and join the `#ring` channel, please identify yourself clearly.
+You can connect to [IRCNet](https://en.wikipedia.org/wiki/IRCnet) and join the `#ring` channel, please identify yourself clearly.
 
 **Discord:**
 
@@ -21,7 +21,7 @@ Feel free to join the [NLNOG Discord server](https://discord.gg/A42ctrPtFr) and 
 
 **Mailing list:**
 
-A mailing list is available for participants of the ring, please visit the [mailman page](http://mailman.nlnog.net/listinfo/ring-users) to subscribe or view the archives.
+A mailing list is available for participants of the ring, please visit the [mailman page](https://mailman.nlnog.net/listinfo/ring-users) to subscribe or view the archives.
 
 ** RIPE handle:**
 The RIPE role object for the NLNOG RING administrator role is [NA9246-RIPE](https://apps.db.ripe.net/db-web-ui/lookup?source=ripe&key=NA9246-RIPE&type=role).
@@ -32,7 +32,7 @@ The RIPE role object for the NLNOG RING administrator role is [NA9246-RIPE](http
 
 Job Snijders
 * E-mail: [job@sobornost.net](mailto:job@sobornost.net)
-* Affiliation: Fastly
+* Affiliation: Self employed
 * PGP Key: [sobornost.net/~job/gpg-key.txt](https://sobornost.net/~job/gpg-key.txt)
 * SSH Key: [sobornost.net/~job/ssh-keys.txt](https://sobornost.net/~job/ssh-keys.txt)
 
@@ -55,3 +55,6 @@ Teun Vink
 * Affiliation: NLNOG Board / BIT
 * PGP Key: [https://teun.tv/nlnog.asc](https://teun.tv/nlnog.asc)
 * SSH key: [https://teun.tv/nlnog.pub](https://teun.tv/nlnog.pub)
+
+
+All admin SSH keys can be found in [nlnog-ring-admins.pub](https://ring.nlnog.net/nlnog-ring-admins.pub).
