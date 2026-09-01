@@ -167,7 +167,6 @@ else:
     confirmbody = ttext.substitute(contact=contact)
 
     # Send mails
-    sender = getpass.getuser() + '@' + socket.getfqdn()
     server = smtplib.SMTP('localhost')
 
     ## Application mail
@@ -188,7 +187,7 @@ else:
         )
         message.attach(attachment)
     text = message.as_string()
-    server.sendmail(sender,ADMINADDR,text)
+    server.sendmail(ADMINADDR,ADMINADDR,text)
 
     ## Confirmation mail
     message = MIMEMultipart()
@@ -197,7 +196,7 @@ else:
     message['Subject'] = "RING Application from %s - %s" % (company,autnum)
     message.attach(MIMEText(confirmbody, "plain"))
     text = message.as_string()
-    server.sendmail(sender,email,text)
+    server.sendmail(ADMINADDR,email,text)
     server.quit()
 
     print('Content-type:text/html\r\n\r\n')
