@@ -12,9 +12,13 @@ The RING has been made possible by generous contributions from these fine patron
 |[![leaseweb](/images/patrons/leaseweb.png)](http://www.leaseweb.com/)|[![efi](/images/patrons/efi.png)](https://www.eurofibercloudinfra.com/)|
 
 ---
-## Timing Server Donation
+## Former infrastructure providers
 
-[![tdc](/images/patrons/tdc.png)](http://www.tdc.net/)
+| | | |
+|---|---|---|
+|[![xs4all](/images/patrons/xs4all.gif)](http://www.xs4all.nl/)|[![hibernia](/images/patrons/hibernia.png)](http://www.hibernianetworks.com/)|[![gossamerthreads](/images/patrons/gossamerthreads.png)](http://www.gossamer-threads.com/)|
+|[![softlayer](/images/patrons/softlayer.png)](http://www.softlayer.com/)|[![dyn](/images/patrons/dyn.png)](http://www.dyn.com/)|[![totaalnet](/images/patrons/totaalnet.png)](http://www.totaalnet.nl/)|
+|[![tdc](/images/patrons/tdc.png)](http://www.tdc.net/)|[![pcextreme](/images/patrons/pcextreme.png)](http://www.pcextreme.nl/)|
 
 ---
 ## 2012 Fundraiser
@@ -28,18 +32,8 @@ The RING has been made possible by generous contributions from these fine patron
 |[![ebayclassifiedsgroup](/images/patrons/ebayclassifiedsgroup.png)](http://www.ebayclassifiedsgroup.com/)|
 
 ---
-## Former infrastructure providers
-
-| | | |
-|---|---|---|
-|[![xs4all](/images/patrons/xs4all.gif)](http://www.xs4all.nl/)|[![hibernia](/images/patrons/hibernia.png)](http://www.hibernianetworks.com/)|[![gossamerthreads](/images/patrons/gossamerthreads.png)](http://www.gossamer-threads.com/)|
-|[![softlayer](/images/patrons/softlayer.png)](http://www.softlayer.com/)|[![dyn](/images/patrons/dyn.png)](http://www.dyn.com/)|[![totaalnet](/images/patrons/totaalnet.png)](http://www.totaalnet.nl/)|
-|[![pcextreme](/images/patrons/pcextreme.png)](http://www.pcextreme.nl/)|
-
----
 ## Early Patrons (2010 – 2012)
 
 | | |
 |---|---|
 |[![intouch](/images/patrons/intouch.png)](http://www.intouch.eu/)|[![snijders-it](/images/patrons/snijders-it.png)](http://www.snijders-it.nl/)|
-
