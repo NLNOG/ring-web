@@ -9,7 +9,7 @@ The RING has been made possible by generous contributions from these fine patron
 | | |
 |---|---|
 |[![amazon](/images/patrons/amazon.png)](http://www.amazon.com/)|[![BIT](/images/patrons/bit.png)](http://www.bit.nl/)|
-|[![leaseweb](/images/patrons/leaseweb.png)](http://www.leaseweb.com/)|[![pcextreme](/images/patrons/efi.png)](https://www.eurofibercloudinfra.com/)|
+|[![leaseweb](/images/patrons/leaseweb.png)](http://www.leaseweb.com/)|[![efi](/images/patrons/efi.png)](https://www.eurofibercloudinfra.com/)|
 
 ---
 ## Timing Server Donation
